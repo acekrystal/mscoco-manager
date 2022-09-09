@@ -11,5 +11,24 @@ The following command will filter the input instances json to only include image
 
 Note: This isn't looking for images with all categories in one. It includes images that have at least one of the specified categories.
 
+Other function : 
+
+--no_categories person dog cat      --> [ 
+Only eliminates these categories from the output_json.]
+
+--copy_filtered_images  --> Extract (copy) only images present in new json file to a separate image folder
+
+--input_images  --> path to folder for filtered/extracted images
+
+-- n
+
+# Example Commands : 
+```python3 filter.py --input_json /mnt/d/DeepLearning/MSCOCO/annotations_trainval2017/annotations/instances_val2017.json --output_json /mnt/d/DeepLearning/MSCOCO/SOS5backgrounds/test.json --no_categories person -cfi -ii /mnt/d/DeepLearning/MSCOCO/val2017 -ni 10```
+
+This wil make a json file without any "person" annotations and will also make a new "image" folder beside the new json file containing only images without the class "pesons". The number of images to copy is set to 10. This can be handy to quickly evaluate if classes are indeed removed without copying all images.
+
+
+
+
 # Immersive Limit Resources
 For more helpful resources, please check out https://www.immersivelimit.com/tutorials.
